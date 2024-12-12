@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith Kumar's Portfolio</title>
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #282c34;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #61dafb;
+        }
+
+        .navbar a {
+            color: #fff;
+            margin: 0 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #61dafb;
+            color: #282c34;
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px;
+        }
+
+        /* Navbar links for smaller screens */
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
+            display: inline-block;
+        }
+
+        .nav-links.active {
+            display: block;
+            position: absolute;
+            background-color: #282c34;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .nav-links a {
+            margin: 10px 0;
+            padding: 10px 0;
+            display: block;
+        }
+
+        /* Section styling */
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Home section styling */
+        #home {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        /* Circular image styling */
+        #home img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: white;
+        }
+
+        /* About, Projects, and Contact sections */
+        #about, #projects, #contact {
+            background-color: #fff;
+        }
+
+        #projects {
+            background-color: #f1f1f1;
+        }
+
+        /* Styling buttons for calls-to-action */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #282c34;
+            color: #fff;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: hsl(122, 82%, 58%);
+            color: #28342d;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links.active {
+                display: flex;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #282c34;
+                padding: 10px 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links a {
+                margin: 10px;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">Rohith Kumar</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="#home" style="margin-right: 20px;">Home</a>
+            <a href="#about" style="margin-right: 20px;">About</a>
+            <a href="#projects" style="margin-right: 20px;">Projects</a>
+            <a href="#contact" style="margin-right: 20px;">Contact</a>
+        </div>
+    </div>
+
+    <!-- Home Section with Circular Image -->
+    <section id="home">
+        <img src="./SUM05635.JPG" alt="Rohith Kumar's Profile Picture">
+        <p>Hello! I'm Rohith Kumar, a web developer and competitive programmer. Explore my projects and get in touch!</p>
+        <a href="#projects" class="btn">View My Projects</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am passionate about solving coding challenges and building creative websites. I'm currently working on projects involving web development, competitive programming, and data science.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>Here you'll find some of the projects I've worked on, including web development tools, competitive programming solutions, and more.</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out through email at <strong>rohith@example.com</strong>.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Rohith Kumar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript to toggle menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
